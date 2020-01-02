@@ -95,4 +95,4 @@ class Module {
 }
 
 
-module.exports = new Module();
+module.exports = Module();
