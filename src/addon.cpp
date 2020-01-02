@@ -98,9 +98,9 @@ NAN_METHOD(Addon::configure)
     ///////////////////////////////////////////////////////////////////////////
     // freq
     if (true) {
-        v8::Local<v8::Value> freq = options->Get(Nan::New<v8::String>("gpio").ToLocalChecked());
+        v8::Local<v8::Value> freq = options->Get(Nan::New<v8::String>("freq").ToLocalChecked());
 
-        if (!gpio->IsUndefined())
+        if (!freq->IsUndefined())
             ws2811.freq = Nan::To<int>(freq).FromMaybe(ws2811.freq);
     }
 
