@@ -35,6 +35,9 @@ NAN_METHOD(Addon::configure)
     };
 
 
+	// if (ws2811.freq != 0) {
+	// 	return Nan::ThrowError("ws281x already configured.");
+	// }
 
     ws2811.freq = DEFAULT_TARGET_FREQ;
     ws2811.dmanum = DEFAULT_DMA;
@@ -90,6 +93,15 @@ NAN_METHOD(Addon::configure)
 
         if (!gpio->IsUndefined())
             ws2811.channel[0].gpionum = Nan::To<int>(gpio).FromMaybe(ws2811.channel[0].gpionum);
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // freq
+    if (true) {
+        v8::Local<v8::Value> freq = options->Get(Nan::New<v8::String>("gpio").ToLocalChecked());
+
+        if (!gpio->IsUndefined())
+            ws2811.freq = Nan::To<int>(freq).FromMaybe(ws2811.freq);
     }
 
     ///////////////////////////////////////////////////////////////////////////
