@@ -1,7 +1,7 @@
 var path = require("path");
 var addon = require(path.join(__dirname, "build", "Release", "rpi-ws281x.node"));
 
-class Module {
+class mod {
     constructor() {
         this.map  = undefined;
         this.leds = undefined;
@@ -95,4 +95,4 @@ class Module {
 }
 
 
-module.exports = Module();
+module.exports = mod;
