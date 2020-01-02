@@ -35,9 +35,6 @@ NAN_METHOD(Addon::configure)
     };
 
 
-	if (ws2811.freq != 0) {
-		return Nan::ThrowError("ws281x already configured.");
-	}
 
     ws2811.freq = DEFAULT_TARGET_FREQ;
     ws2811.dmanum = DEFAULT_DMA;
